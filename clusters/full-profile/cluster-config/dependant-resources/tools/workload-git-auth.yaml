@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: workload-git-auth
+  namespace: tap-install
+type: Opaque
+stringData:
+  content.yaml: |
+    git:
+      ingress_domain: tap.h2o-3-16591.h2o.vmware.com
+      host: https://git.tap.h2o-3-16591.h2o.vmware.com
+      username: tanzu
+      password: VMware1!
+      caFile: |
+        -----BEGIN CERTIFICATE-----
+        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
+        2txCOZ3IdjqUN4M=
+        -----END CERTIFICATE-----
