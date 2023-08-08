@@ -1,0 +1,189 @@
+tap_install:
+  values:
+    shared:
+      ingress_domain: tap.h2o-3-16591.h2o.vmware.com
+      ingress_issuer: local-issuer
+      image_registry:
+        project_path: harbor.tap.h2o-3-16591.h2o.vmware.com/tap-15
+      ca_cert_data: |
+        -----BEGIN CERTIFICATE-----
+        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
+        2txCOZ3IdjqUN4M=
+        -----END CERTIFICATE-----
+    ceip_policy_disclosed: true
+    profile: full
+    supply_chain: basic
+    ootb_supply_chain_basic:
+      registry:
+        server: harbor.tap.h2o-3-16591.h2o.vmware.com
+        repository: tap-15/supplychain
+      gitops:
+        ssh_secret: git-secret
+      maven:
+        repository:
+          url: https://nexus-80.tap.h2o-3-16591.h2o.vmware.com/repository/maven-central/
+          secret_name: maven-credentials
+    ootb_supply_chain_testing:
+      registry:
+        server: harbor.tap.h2o-3-16591.h2o.vmware.com
+        repository: tap-15/supplychain
+      gitops:
+        ssh_secret: git-secret
+      maven:
+        repository:
+          url: https://nexus-80.tap.h2o-3-16591.h2o.vmware.com/repository/maven-central/
+          secret_name: maven-credentials
+    ootb_supply_chain_testing_scanning:
+      registry:
+        server: harbor.tap.h2o-3-16591.h2o.vmware.com
+        repository: tap-15/supplychain
+      gitops:
+        ssh_secret: git-secret
+      maven:
+        repository:
+          url: https://nexus-80.tap.h2o-3-16591.h2o.vmware.com/repository/maven-central/
+          secret_name: maven-credentials
+    contour:
+      envoy:
+        service:
+          type: LoadBalancer
+    buildservice:
+      kp_default_repository: harbor.tap.h2o-3-16591.h2o.vmware.com/tap-15/build
+      kp_default_repository_username: admin
+      exclude_dependencies: true
+    tap_gui:
+      service_type: ClusterIP
+      metadataStoreAutoconfiguration: true
+      ingressEnabled: "true"
+      app_config:
+        catalog:
+          locations:
+          - type: url
+            target: https://github.com/MoSehsah/bank-demo/blob/main/catalog/catalog-info.yaml
+        backend:
+          reading:
+            allow:
+            - host: git.tap.h2o-3-16591.h2o.vmware.com
+        auth:
+          allowGuestAccess: true
+          environment: development
+          session:
+            secret: secretvalue
+          providers:
+            oidc:
+              development:
+                clientId: tap-auth
+                clientSecret: secretvalue
+                metadataUrl: https://dex.tap.h2o-3-16591.h2o.vmware.com/.well-known/openid-configuration
+    cnrs:
+      domain_template: '{{.Name}}-{{.Namespace}}.{{.Domain}}'
+      ingress_issuer: local-issuer
+    metadata_store:
+      ns_for_export_app_cert: '*'
+      app_service_type: ClusterIP
+    scanning:
+      metadataStore:
+        url: ""
+    grype:
+      targetImagePullSecret: scanner-secret-ref
+      db:
+        dbUpdateUrl: https://minio.tap.h2o-3-16591.h2o.vmware.com/grype/databases/listing.json
+    crossplane:
+      registryCaBundleConfig:
+        name: ca-bundle-config
+        key: ca-bundle
+    bitnami_services:
+      mysql:
+        helm_chart:
+          repo: oci://harbor.tap.h2o-3-16591.h2o.vmware.com/bitnami/charts
+          version: 9.8.1
+          chart_pull_secret_ref:
+            name: chart-pull
+            namespace: default
+          container_pull_secret_ref:
+            name: container-pull
+            namespace: default
+      postgresql:
+        helm_chart:
+          repo: oci://harbor.tap.h2o-3-16591.h2o.vmware.com/bitnami/charts
+          version: 12.3.1
+          chart_pull_secret_ref:
+            name: chart-pull
+            namespace: default
+          container_pull_secret_ref:
+            name: container-pull
+            namespace: default
+      rabbitmq:
+        helm_chart:
+          repo: oci://harbor.tap.h2o-3-16591.h2o.vmware.com/bitnami/charts
+          version: 11.14.2
+          chart_pull_secret_ref:
+            name: chart-pull
+            namespace: default
+          container_pull_secret_ref:
+            name: container-pull
+            namespace: default
+      redis:
+        helm_chart:
+          repo: oci://harbor.tap.h2o-3-16591.h2o.vmware.com/bitnami/charts
+          version: 17.10.0
+          chart_pull_secret_ref:
+            name: chart-pull
+            namespace: default
+          container_pull_secret_ref:
+            name: container-pull
+            namespace: default
+    policy:
+      tuf_enabled: false
+    tap_telemetry:
+      installed_for_vmware_internal_use: "true"
+    namespace_provisioner:
+      controller: false
+      gitops_install:
+        ref: origin/main
+        subPath: gorkem/namespace-provisioner/namespaces
+        url: https://github.com/gorkemozlu/tap-gitops-ri.git
+      additional_sources:
+      - git:
+          ref: origin/main
+          subPath: gorkem/namespace-provisioner/resources
+          url: https://github.com/gorkemozlu/tap-gitops-ri.git
+        path: _ytt_lib/resources
+      import_data_values_secrets:
+      - name: workload-git-auth
+        namespace: tap-install
+        create_export: true
+      overlay_secrets:
+      - name: grype-airgap-overlay-override
+        namespace: tap-install
+        create_export: true
